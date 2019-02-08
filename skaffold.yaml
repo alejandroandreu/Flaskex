@@ -7,7 +7,7 @@ build:
     docker: {}
   tagPolicy:
     envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/alejandroandreu/flaskex:{{.VERSION}}'
+      template: '{{.DOCKER_REGISTRY}}/stone-bongo-229410/flaskex:{{.VERSION}}'
   local: {}
 deploy:
   kubectl: {}
@@ -18,7 +18,7 @@ profiles:
     - docker: {}
     tagPolicy:
       envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/alejandroandreu/flaskex:{{.DIGEST_HEX}}'
+        template: '{{.DOCKER_REGISTRY}}/stone-bongo-229410/flaskex:{{.DIGEST_HEX}}'
     local: {}
   deploy:
     helm:
@@ -26,5 +26,5 @@ profiles:
       - name: flaskex
         chartPath: charts/flaskex
         setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/alejandroandreu/flaskex'
+          image.repository: '{{.DOCKER_REGISTRY}}/stone-bongo-229410/flaskex'
           image.tag: '{{.DIGEST_HEX}}'
