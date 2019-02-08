@@ -1,5 +1,5 @@
 FROM python:onbuild
-ENV PORT 8080
-EXPOSE 8080
+ENV PORT 5000
+EXPOSE 5000
 ENTRYPOINT ["python"]
 CMD ["app.py"]
